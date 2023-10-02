@@ -1,7 +1,2 @@
-#!/usr/bin/python3
-import py_compile
-import os
-
-filename = os.environ['PYFILE']
-output_filename = filename + 'c'
-py_compile.compile(filename, output_filename)
+#!/bin/bash
+python3 -m py_compile -o "$(basename -s .py "$PYFILE").pyc" "$PYFILE"
