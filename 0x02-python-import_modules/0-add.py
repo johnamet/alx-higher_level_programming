@@ -9,9 +9,6 @@ from add_0 import add
 # Calculate the result
 result = add(a, b)
 
-# Print the result using string formatting
-print("{} + {} = {}".format(a, b, result))
-
 # This code will only run if the script is executed directly
 if __name__ == "__main__":
     # Any additional code you want to run when the script is executed directly
