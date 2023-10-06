@@ -7,7 +7,7 @@ def main():
     module_name = "hidden_4"
     path = "hidden_4.pyc"
 
-    #Load the module
+    # Load the module
     module = imp.load_compiled(module_name, path)
 
     module_names = [name for name in dir(module) if not name.startswith("__")]
