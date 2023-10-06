@@ -1,21 +1,22 @@
 #!/usr/bin/python3
-import imp
+"""Prints all the names defined by the compiled module hidden_4.pyc."""
+
+import dis
+import importlib.util
+import sys
 
 
-def main():
-    # Load the .pyc file
-    module_name = "hidden_4"
-    path = "hidden_4.pyc"
-
-    # Load the module
-    module = imp.load_compiled(module_name, path)
-
-    module_names = [name for name in dir(module) if not name.startswith("__")]
-    module_names.sort()
-
-    for name in module_names:
-        print(name)
+def print_names():
+    """Prints all the names defined by the compiled module hidden_4.pyc."""
+    spec = importlib.util.spec_from_file_location("hidden_4", "./hidden_4.pyc")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    for name in dir(module):
+        if not name.startswith("__"):
+            print(name)
 
 
 if __name__ == "__main__":
-    main()
+    sys.dont_write_bytecode = True
+    print_names()
+
