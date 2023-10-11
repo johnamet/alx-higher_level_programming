@@ -6,7 +6,7 @@ def roman_to_int(roman_string):
 
     roman_string = roman_string.upper()
 
-    nums = {'M': 1000, 'D':500, 'C':100, 'L':50, 'X':10, 'V':5, 'I':1}
+    nums = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
 
     _sum = 0
 
@@ -19,5 +19,3 @@ def roman_to_int(roman_string):
             _sum += value
 
     return _sum
-
-
