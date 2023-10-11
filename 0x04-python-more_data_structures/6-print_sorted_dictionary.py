@@ -10,4 +10,5 @@ def print_sorted_dictionary(a_dictionary):
 
     a_dictionary = tmp_dict
 
-    print("".join("{}: {}\n".format(k,v) for k,v in a_dictionary.items()), end="")
+    print("".join("{}: {}\n".format(k, v)
+                  for k, v in a_dictionary.items()), end="")
