@@ -26,6 +26,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
     l_idx = tuple_a[0] + tuple_b[0]
     r_idx = tuple_a[1] + tuple_b[1]
 
-    tuple_c = (l, r)
+    tuple_c = (l_idx, r_idx)
 
     return tuple_c
