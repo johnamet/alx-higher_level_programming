@@ -1,0 +1,46 @@
+===================================
+How to use the matrix mul module
+===================================
+The module contains only one function
+`lazy_matrix_mul(m_a, m_b)`
+
+>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+It multplies two matrices i.e. the dot product of two matrices
+
+The matrices needs to be a list of lists
+>>> lazy_matrix_mul([[2, 1, 2],[4, 6, 1]], [[2, 1], [4, 1], [4, 1]]) # doctest: +NORMALIZE_WHITESPACE
+array([[16, 5],
+	[36, 11]])
+>>> lazy_matrix_mul("b", [4, 5, 6]) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: m_a must be a list or a numpy array
+
+>>> lazy_matrix_mul([[1, 2]], True)
+Traceback (most recent call last):
+TypeError: m_b must be a list or a numpy array
+
+The rows in the matrix must be either an integer or float
+>>> lazy_matrix_mul([[1, 3, 4], ["b", False, True]], [[1, 3], [1, 2], [1, 1]]) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: m_a should contain only integers or floats
+
+>>> lazy_matrix_mul([[1, 3, 4], [1, 3, 4]], [[True, False], ["b", 2], [2, 2]]) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: m_b should contain only integers or floats
+
+>>> lazy_matrix_mul([[1, 2, 3], [1, 2]], [[1, 2], [1, 2], [1, 2]]) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: each row of m_a must be of the same size
+
+>>> lazy_matrix_mul([[]], [[1, 2, 4]]) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+ValueError: m_a can't be empty
+
+>>> lazy_matrix_mul([[1, 2, 3], [4, 3, 5]], [[1, 2], [3, 4]]) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+ValueError: m_a and m_b can't be multiplied
+
+>>> lazy_matrix_mul([1, 2, 3], [1, 2]) #doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: m_a must be a list of lists or array of arrays/lists
