@@ -1,0 +1,51 @@
+=====================================
+How to Use add_integer
+=====================================
+The module adds two integers, it has only one function
+``add_integer(a, b=98)``
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+When only one argument is supplied, b is defaulted to 98
+>>> add_integer(1)
+99
+
+When both arguments are supplied, it gives you the sum
+>>> add_integer(2, 4)
+6
+
+When float numbers are supplied, it is casted to int
+>>> add_integer(2.5, 4)
+6
+
+>> add_integer(2.5, 1.5)
+3
+
+
+When the argument supplied is not integer ot float, a TypeError is raised
+>>> add_integer("9", 4)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(1, "b")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("b", "a"):
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(True, False):
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(0)
+98
+
+>>> add_integer(True)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(98, True)
+Traceback (most recent call last):
+TypeError: b must be an integer
