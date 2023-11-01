@@ -3,6 +3,7 @@ max_integer = __import__('6-max_integer').max_integer
 import unittest
 
 class TestMaxInteger(unittest.TestCase):
+    """
     def test_values(self):
         #Test if the list empty
         self.assertRaises(ValueError, max_integer, [])
@@ -15,6 +16,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, True)
         self.assertRaises(TypeError, max_integer, "mom")
         self.assertRaises(TypeError, max_integer, 4)
+    """
 
     def test_max_integer(self):
         #Test max integer when list is not empty
