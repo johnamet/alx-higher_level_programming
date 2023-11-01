@@ -80,4 +80,8 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        def cls(size, size)
+        """Returns a square from a rectangle
+        Args:
+            size (int): size of the square
+        """
+        return cls(size, size)
