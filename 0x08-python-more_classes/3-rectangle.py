@@ -44,4 +44,11 @@ class Rectangle:
     def perimeter(self):
         if self.width == 0 or self.height == 0:
             return 0
-    return (2 * self.width) + (2 * self.height)
+        return (2 * self.width) + (2 * self.height)
+
+    def __str__(self):
+        rect = ""
+        if self.height != 0 or self.width != 0:
+            for _ in range(self.height):
+                rect += "{}\n".format("#" * self.width)
+        return rect
