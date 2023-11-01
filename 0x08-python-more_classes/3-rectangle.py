@@ -48,9 +48,8 @@ class Rectangle:
 
     def __str__(self):
         rect = ""
-        if self.height != 0 or self.width != 0:
-            for i in range(self.height):
-                rect += "{}".format("#" * self.width)
-                if i < self.height - 1:
-                    rect += "\n"
+        for i in range(self.height):
+            rect += "{}".format("#" * self.width)
+            if i < self.height - 1 and self.width != 0:
+                rect += "\n"
         return rect
