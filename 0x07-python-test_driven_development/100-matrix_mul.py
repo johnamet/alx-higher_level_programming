@@ -23,7 +23,7 @@ def matrix_mul(m_a, m_b):
         raise ValueError("m_a can't be empty")
     if len(m_b) == 0 or len(m_b[0]) == 0:
         raise ValueError("m_b can't be empty")
- 
+
     for row in m_a:
         for element in row:
             if not isinstance(element, (int, float)):
@@ -40,13 +40,13 @@ def matrix_mul(m_a, m_b):
     if len(set(row_b_l)) != 1:
         raise TypeError("each row of m_b must be of the same size")
 
-    #To multiply two matrices the number of rows in matrix A
+    # To multiply two matrices the number of rows in matrix A
     # needs to be equal to the number of columns in matrix B
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
     new_matrix = []
-    
+
     for i in range(len(m_a)):
         row = []
         for j in range(len(m_b[0])):

@@ -4,7 +4,6 @@
 
 def print_square(size):
     """This function prints a square given its size
-    
     Args:
         size (int): The size of the square
 

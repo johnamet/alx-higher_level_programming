@@ -34,5 +34,5 @@ def text_indentation(text):
     if line:
         lines.append(line)
 
-    for l in lines:
-        print("{}".format(l), end="")
+    for lne in lines:
+        print("{}".format(lne), end="")

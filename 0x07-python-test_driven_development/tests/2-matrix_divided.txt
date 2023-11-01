@@ -34,3 +34,20 @@ When the divisor is not a number
 >>> matrix_divided(matrix, "Mom") # doctest: +NORMALIZE_WHITESPACE
 Traceback (most recent call last):
 TypeError: div must be a number
+
+When the matrix is list of list but not rectangular
+>>> matrix = [[1, 2, 3], [1, 2]]
+>>> matrix_divided(matrix, 4)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+When only one argument is supplied
+>>> matrix = [[1, 2, 3], [1, 2, 3]]
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+When no argument is supplied
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

@@ -15,7 +15,7 @@ def say_my_name(first_name, last_name=""):
     My name is John Ametepe
 
     >>> say_my_name("John") #doctest: +NORMALIZE_WHITESPACE
-    My name is John 
+    My name is John
 
     >>> say_my_name(12)
     Traceback (most recent call last):
