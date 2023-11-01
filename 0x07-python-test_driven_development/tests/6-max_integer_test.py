@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-max_integer = __import__('6-max_integer').max_integer
 import unittest
+max_integer = __import__('6-max_integer').max_integer
+
 
 class TestMaxInteger(unittest.TestCase):
     """
@@ -19,8 +20,9 @@ class TestMaxInteger(unittest.TestCase):
     """
 
     def test_max_integer(self):
-        #Test max integer when list is not empty
-        self.assertEqual(max_integer([1,3,4,52,4]), 52)
-        self.assertEqual(max_integer([-1, 0, -2 -4]), 0)
+        # Test max integer when list is not empty
+        self.assertEqual(max_integer([1, 3, 4, 52, 4]), 52)
+        self.assertEqual(max_integer([-1, 0, -2, -4]), 0)
         self.assertEqual(max_integer([5, 4, 2, 1]), 5)
         self.assertEqual(max_integer([1, 2, 3]), 3)
+        self.assertEqual(max_integer([]), None)
