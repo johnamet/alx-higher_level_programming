@@ -5,7 +5,7 @@
  * with size @size
  * @size: The size of the table
  *
- * Returns: a hash_table_t otherwise NULL
+ * Return: a hash_table_t otherwise NULL
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
@@ -18,8 +18,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	table->size = size;
-	table->array = malloc(size * sizeof(hash_node_ti *));
-	
+	table->array = malloc(size * sizeof(hash_node_t *));
 	if (!table->array)
 	{
 		free(table);
