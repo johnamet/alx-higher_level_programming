@@ -3,6 +3,7 @@
     the list object
 """
 
+
 class MyList(list):
     """MyList class inherits from the list object
         Args:
@@ -16,5 +17,5 @@ class MyList(list):
 
         if any(not isinstance(item, int) for item in self):
             raise TypeError("element needs to be an int")
-        
+
         print(sorted(self))
