@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """This module contains one function `is_same_class`
     it checks whether an object is exactly an instance
     of a class
