@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""The module contains onr function that prints the 
+"""The module contains one function that prints the
     attributes and methods of a class
 """
 
 
 def lookup(obj):
-    """The function returns the list of available attributes 
+    """The function returns the list of available attributes
         and methods of an object.
     Args:
         obj (:object): the object to list attributes
