@@ -4,15 +4,15 @@
     of a class
 """
 
+
 def is_same_class(obj, a_class):
     """The function checks if an object is an instance
         of a class.
         Args:
             obj (:object): The object
             a_class (object): The class
-
         Returns:
             :bool - True if it is an instance otherwise False
     """
 
-    return isinstance(obj, a_class)
+    return type(obj) is a_class
