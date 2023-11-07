@@ -22,7 +22,7 @@ class BaseGeometry:
                 name (str): The name (description) of the value
                 value (int): The value to check
         """
-        if not isinstance(value, int):
+        if not isinstance(type(value), int) and type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
 
         if value <= 0:
