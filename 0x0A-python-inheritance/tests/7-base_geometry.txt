@@ -1,0 +1,19 @@
+This test file tests the BaseGeometry class method
+`integer_validation`
+===================================================
+How to use integer_validation
+===================================================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("height", 467)
+
+>>> bg.integer_validator("height", 27.8)
+Traceback (most recent call last):
+TypeError: height must be an integer
+
+>>> bg.integer_validator("weight", -89)
+Traceback (most recent call last):
+ValueError: weight must be greater than 0
