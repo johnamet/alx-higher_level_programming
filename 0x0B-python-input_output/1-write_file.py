@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """This module contains one function 'write_file'
     that writes a text to file
 """
