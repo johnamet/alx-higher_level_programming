@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""The module contains one function `read_file`, the function reads a text file and prints
+"""The module contains one function `read_file`,
+    the function reads a text file and prints
     it out to stdout
 """
 
