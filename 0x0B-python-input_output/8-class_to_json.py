@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """The module saves a class atrribute to json file"""
-import json
 
 
 def class_to_json(obj):
