@@ -9,7 +9,7 @@ class RectangleTestCase(unittest.TestCase):
         self.rectangle = Rectangle(2, 3)
 
     def test_area_property_with_default_values(self):
-        self.assertEqual(self.rectangle.area, 6)
+        self.assertEqual(self.rectangle.area(), 6)
 
     def test_area_property(self):
         # Test with new values of width and height
@@ -17,4 +17,4 @@ class RectangleTestCase(unittest.TestCase):
         self.rectangle.width = 2
 
         # Ensure that the area property returns the correct value
-        self.assertEqual(self.rectangle.area, 8)
+        self.assertEqual(self.rectangle.area(), 8)
