@@ -26,11 +26,33 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
-            raise TypeError("width nust be an integer")
+            raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.height = value
         self.width = value
+
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            for index, _ in enumerate(args):
+                if index == 0:
+                    self.id = args[index]
+                if index == 1:
+                    self.size = args[index]
+                if index == 2:
+                    self.x = args[index]
+                if index == 3:
+                    self.y = args[index]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
