@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This is a base model class"""
+import json
 
 
 class Base:
@@ -19,3 +20,16 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    def to_json_string(list_dictionaries):
+        """The method returns json representation of
+            list dictionaries
+        Args:
+            list_dictionaries (obj): is a list of dictionaries
+        """
+        if not list_dictionaries and len(list_dictionaries) == 0:
+            return "[]"
+        else:
+            json_str = json.dumps(list_dictionaries)
+
+        return json_str

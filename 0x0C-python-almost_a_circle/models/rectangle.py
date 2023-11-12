@@ -93,6 +93,42 @@ class Rectangle(Base):
             print()
         for _ in range(self.__height):
             print("{}".format(" " * self.__x + "#" * self.__width))
+    
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            for index, _ in enumerate(args):
+                if index == 0:
+                    self.id = args[index]
+                if index == 1:
+                    self.width = args[index]
+                if index == 2:
+                    self.height = args[index]
+                if index == 3:
+                    self.x = args[index]
+                if index == 4:
+                    self.y = args[index]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
+    def to_dictionary(self):
+        """This returns a dictionary representation of a Rctangle"""
+        rec_dict = {
+                "id": self.id,
+                "width": self.width,
+                "height": self.height,
+                "x": self.x,
+                "y": self.y
+                }
+        return rec_dict
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y,
