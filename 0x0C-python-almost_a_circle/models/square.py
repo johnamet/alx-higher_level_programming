@@ -56,14 +56,14 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         sq_dict = {
-                "id": self.id,
-                "x": self.x,
-                "size": self.size,
-                "y": self.y
-                }
+            "id": self.id,
+            "x": self.x,
+            "size": self.size,
+            "y": self.y
+        }
         return sq_dict
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(
-                self.id, self.x,
-                self.y, self.width)
+            self.id, self.x,
+            self.y, self.width)
