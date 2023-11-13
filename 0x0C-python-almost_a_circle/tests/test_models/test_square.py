@@ -96,3 +96,12 @@ class TestSquareAttributes(unittest.TestCase):
         # Test the kwargs with y
         self.square.update(y=5)
         self.assertEqual(self.square.y, 5)
+
+    def test_id_attribute(self):
+        # Test id attribute
+        square = Square(2, 3, 4, 5)
+        self.assertEqual(square.id, 5)
+
+        # Test id attribute setter
+        square.id = 100
+        self.assertEqual(square.id, 100)

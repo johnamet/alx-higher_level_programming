@@ -50,4 +50,3 @@ rectangle.display()
 
 # Print the string representation of the rectangle
 print(str(rectangle))  # Output: "[Rectangle] (42) 1/2 - 4/5"
-
