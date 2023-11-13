@@ -95,6 +95,8 @@ class Rectangle(Base):
             print("{}".format(" " * self.__x + "#" * self.__width))
 
     def update(self, *args, **kwargs):
+        """Update the attributes"""
+
         if args and len(args) != 0:
             for index, _ in enumerate(args):
                 if index == 0:
