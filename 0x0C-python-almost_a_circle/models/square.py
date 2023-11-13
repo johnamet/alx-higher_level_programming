@@ -64,5 +64,6 @@ class Square(Rectangle):
         return sq_dict
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
+        return "[Square] ({}) {}/{} - {}".format(
+                self.id, self.x,
                 self.y, self.width)
