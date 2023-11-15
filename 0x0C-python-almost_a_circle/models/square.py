@@ -33,6 +33,11 @@ class Square(Rectangle):
         self.width = value
 
     def update(self, *args, **kwargs):
+        """Updates the attributes of the class
+        Args:
+            args (:obj:list:int): arguments
+            kwargs (:obj:dict:): keyworded arguments
+        """
         if args and len(args) != 0:
             for index, _ in enumerate(args):
                 if index == 0:
@@ -55,6 +60,10 @@ class Square(Rectangle):
                     self.y = value
 
     def to_dictionary(self):
+        """Converts the attributes of the Square class to
+            a dictionary
+        """
+        
         sq_dict = {
             "id": self.id,
             "x": self.x,
