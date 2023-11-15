@@ -63,7 +63,7 @@ class Square(Rectangle):
         """Converts the attributes of the Square class to
             a dictionary
         """
-        
+
         sq_dict = {
             "id": self.id,
             "x": self.x,
