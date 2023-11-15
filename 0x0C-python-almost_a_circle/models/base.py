@@ -99,6 +99,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        """load_from_file loads the class attributes from a json
+            file based on the object class
+        """
+
         filename = "{}.json".format(cls.__name__)
         instances = []
         try:
@@ -114,7 +118,10 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """The method saves to a csv file"""
+        """The method saves to a csv file
+        Args:
+            list_objs (:obj):  list of objects to save
+        """
 
         if not list_objs:
             list_objs = []
@@ -135,6 +142,9 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """This loads a class attibutes from a csv file
+        """
+
         filename = "{}.csv".format(cls.__name__)
         instances = []
         loaded_attri = []
@@ -160,6 +170,13 @@ class Base:
         return instances
 
     def draw(list_rectangles, list_squares):
+        """The draw method draws a rectangles or squares
+        using turtle class.
+        Args:
+            list_rectangles (obj): The list of rectangle instances
+            list_squares (obj): The list of square instances
+        """
+
         screen = turtle.Screen()
         screen.bgcolor("white")
 
