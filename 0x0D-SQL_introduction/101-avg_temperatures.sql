@@ -6,7 +6,7 @@ source temperatures.sql;
 
 SELECT
     city,
-    AVG(value * 9/5 + 32) AS avg_temperature_fahrenheit
+    AVG(value) AS avg_temperature_fahrenheit
 FROM
     temperatures
 GROUP BY
