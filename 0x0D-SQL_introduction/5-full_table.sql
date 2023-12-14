@@ -1,2 +1,2 @@
 -- Full description of table
-SHOW COLUMNS IF EXISTS FROM first_table
+SHOW COLUMNS  FROM first_table
