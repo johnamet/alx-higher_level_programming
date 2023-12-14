@@ -2,14 +2,12 @@
 
 USE hbtn_0c_0;
 
-source temperatures.sql;
-
 SELECT
     city,
-    AVG(value) AS avg_temperature_fahrenheit
+    AVG(value) AS avg_temp
 FROM
     temperatures
 GROUP BY
     city
 ORDER BY
-    avg_temperature_fahrenheit DESC;
+    avg_temp DESC;
