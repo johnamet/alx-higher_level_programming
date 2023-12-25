@@ -1,0 +1,53 @@
+==================================================
+This is a test file for matrix divide module
+==================================================
+
+==================================================
+How to use the matrix_divided function
+==================================================
+
+The module divides a all elements in a list by a number
+```matrix_divided(matrix, div)```
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+The function only accepts a matrix of integers or float (list of lists)
+
+>>> matrix = [[2, 2, 4], [1, 2, 2]]
+
+>>> matrix_divided(matrix, 2)
+[[1.0, 1.0, 2.0], [0.5, 1.0, 1.0]]
+
+>>> matrix = ["b", 1, 2]
+>>> matrix_divided(matrix, 5) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+When the divisor is zero it should raise ZeroDivisionError
+>>> matrix = [[1, 2, 3], [1, 3, 4]]
+>>> matrix_divided(matrix, 0) # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+ZeroDivisionError: division by zero
+
+When the divisor is not a number
+>>> matrix = [[1, 2, 3], [1, 3, 4]]
+>>> matrix_divided(matrix, "Mom") # doctest: +NORMALIZE_WHITESPACE
+Traceback (most recent call last):
+TypeError: div must be a number
+
+When the matrix is list of list but not rectangular
+>>> matrix = [[1, 2, 3], [1, 2]]
+>>> matrix_divided(matrix, 4)
+Traceback (most recent call last):
+TypeError: Each row of the matrix must have the same size
+
+When only one argument is supplied
+>>> matrix = [[1, 2, 3], [1, 2, 3]]
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+When no argument is supplied
+>>> matrix_divided()
+Traceback (most recent call last):
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'

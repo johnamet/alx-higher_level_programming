@@ -1,0 +1,19 @@
+======================================
+How to use the text indentation module
+======================================
+The module contains one function
+`text_indentation(text)`
+The function breaks a full text into lines with `.`, `:` and `?` as delim
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+If the input text is not a string
+>>> text_indentation(4)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>> text_indentation("")
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
