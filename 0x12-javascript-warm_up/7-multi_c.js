@@ -7,8 +7,10 @@ let i = 0;
 if (isNaN(myNumber)) {
   console.log('Missing number of occurences');
 } else {
-  while (i !== myNumber) {
-    console.log('C is fun');
-    i += 1;
+  if (myNumber > 0) {
+    while (i !== myNumber) {
+      console.log('C is fun');
+      i += 1;
+    }
   }
 }
