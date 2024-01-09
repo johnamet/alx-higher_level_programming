@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const [, , args] = process.argv;
+const [, , ...args] = process.argv;
 
-if (args.lenght > 1) {
+if (args.length > 1) {
   console.log('Arguments found');
 } else if (args.length === 1) {
   console.log('Argument found');
