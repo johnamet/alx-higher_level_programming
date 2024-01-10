@@ -6,11 +6,11 @@ class Square extends Sq {
     this.size = size;
   }
 
-  charPrint (ch = 'X') {
+  charPrint (c = 'X') {
     for (let i = 0; i < this.size; i++) {
       let row = '';
       for (let j = 0; j < this.size; j++) {
-        row += ch;
+        row += c;
       }
       console.log(row);
     }
