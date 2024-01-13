@@ -9,7 +9,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     passwd = sys.argv[2]
     database = sys.argv[3]
-    city_name = sys.argv[4]
+    state_name = sys.argv[4]
 
     db = MySQLdb.connect(host="localhost",
                          user=username,
@@ -22,7 +22,7 @@ if __name__ == "__main__":
             SELECT cities.id, cities.name, states.name
             FROM cities
             JOIN states ON cities.state_id = states.id
-            WHERE cities.name = %s
+            WHERE state.name = %s
             ORDER BY cities.id ASC
             """
 
