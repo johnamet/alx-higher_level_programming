@@ -26,7 +26,7 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC
             """
 
-    cursor.execute(query, (city_name,))
+    cursor.execute(query, (state_name,))
 
     rows = cursor.fetchall()
 
