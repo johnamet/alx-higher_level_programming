@@ -5,7 +5,7 @@ passed as argument from the database
 """
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 import sys
 
 
@@ -24,8 +24,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).filter(State.name, state_name)\
-        .first()
+    query = session.query(State).filter(text("name = :name"))\
+    .params(name=state_name).first()
     
     if query is None:
         print("Not found")
