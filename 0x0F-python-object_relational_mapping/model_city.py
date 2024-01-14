@@ -5,6 +5,7 @@ The script contains the class definition for city
 from sqlalchemy import Column, String, Integer
 from sqlalchemy import ForeignKey
 from model_state import Base
+from sqlalchemy.orm import relationship
 
 
 class City(Base):
@@ -22,3 +23,4 @@ class City(Base):
     state_id = Column(Integer,
                       ForeignKey('states.id'),
                       nullable=False)
+    state = relationship('States', back_populates="City")
