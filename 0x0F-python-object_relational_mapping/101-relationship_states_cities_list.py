@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     queries = session.query(State)\
         .order_by(State.id).group_by(State.id).all()
-    
+
     for query in queries:
         print("{}: {}".format(query.id, query.name))
         for city in query.cities:
