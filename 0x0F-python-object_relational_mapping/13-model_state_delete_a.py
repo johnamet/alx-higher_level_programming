@@ -24,6 +24,7 @@ if __name__ == "__main__":
 
     rows = session.query(State).filter(State.name.like('%a%')).all()
 
-    rows.delete()
+    for row in rows:
+        session.delete(row)
 
     session.commit()
