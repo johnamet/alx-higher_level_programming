@@ -1,25 +1,28 @@
 #!/usr/bin/python3
 """
-Lists all states
+The scripts lists all objects that
+contain letter a from the database
 """
+import sys
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-import sys
-
 
 if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
+    user = sys.argv[1]
+    passwd = sys.argv[2]
     database = sys.argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:\
                            {}@localhost:3306/{}'
-                           .format(username, password, database))
+                           .format(user, passwd, database))
     Base.metadata.create_all(engine)
-
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in session.query(State).order_by(State.id):
-        print("{}: {}".format(instance.id, instance.name))
+    rows = session.query(State)\
+        .filter(State.name.like('%a%'))\
+        .order_by(State.id).first()
+
+    for row in rows:
+        print("{}: {}".format(row.id, row.name))
