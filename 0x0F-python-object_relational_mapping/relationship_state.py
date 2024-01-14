@@ -21,9 +21,6 @@ class State(Base):
                 nullable=False, autoincrement=True)
 
     name = Column(String(128), nullable=False)
-    city_id = Column(Integer,
-                     ForeignKey('cities.id'),
-                     nullable=False)
 
     cities = relationship('City', back_populates="states",
                           cascade='all, delete-orphan')
