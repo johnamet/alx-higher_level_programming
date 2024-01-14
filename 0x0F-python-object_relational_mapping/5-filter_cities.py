@@ -30,5 +30,11 @@ if __name__ == "__main__":
 
     rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
+    if rows is None or len(rows) == 0:
+        print()
+    else:
+        rs = []
+        for row in rows:
+            rs.append(row[1])
+
+        print(','.join(rs))
