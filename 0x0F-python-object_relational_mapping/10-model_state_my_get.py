@@ -25,8 +25,7 @@ if __name__ == "__main__":
     session = Session()
 
     query = session.query(State).filter(text("name = :name"))\
-    .params(name=state_name).first()
-    
+        .params(name=state_name).first()
 
     if query is None:
         print("Not found")
