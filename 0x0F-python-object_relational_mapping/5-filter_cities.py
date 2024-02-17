@@ -16,10 +16,9 @@ if __name__ == "__main__":
                          passwd=passwd,
                          port=3306,
                          database=database)
-
     cursor = db.cursor()
     query = """
-            SELECT cities.id, cities.name
+            SELECT *
             FROM cities
             JOIN states ON cities.state_id = states.id
             WHERE states.name = %s
@@ -27,14 +26,7 @@ if __name__ == "__main__":
             """
 
     cursor.execute(query, (state_name,))
-
     rows = cursor.fetchall()
-
-    if rows is None or len(rows) == 0:
-        print()
-    else:
-        rs = []
-        for row in rows:
-            rs.append(row[1])
-
-        print(','.join(rs))
+    for row in rows:
+        cities.append(row[2])
+        print(",".join(cities))
