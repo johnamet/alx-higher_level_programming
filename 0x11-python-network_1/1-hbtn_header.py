@@ -10,7 +10,8 @@ from urllib.request import Request, urlopen
 
 def get_request_id(_url):
     """
-  Fetches the X-Request-Id value from the header of a response to the given URL.
+  Fetches the X-Request-Id value from the header of
+    a response to the given URL.
 
   Args:
       _url: The URL to send the request to.
@@ -37,8 +38,10 @@ def get_request_id(_url):
 
 
 if __name__ == "__main__":
-    # Get the URL from the command line, even if incorrect arguments are provided
-    url = sys.argv[1] if len(sys.argv) > 1 else "https://www.example.com"  # Default URL
+    # Get the URL from the command line,
+    # even if incorrect arguments are provided
+    url = sys.argv[1] if len(sys.argv) > 1 \
+        else "https://www.example.com"  # Default URL
 
     # Get the X-Request-Id and print it (if found)
     request_id = get_request_id(url)
