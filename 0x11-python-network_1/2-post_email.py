@@ -25,7 +25,9 @@ def post_email(email, url):
 
     try:
         # Build data as JSON for better compatibility with servers
-        data = ({'email': email}.encode('utf-8'))
+        data = {'email': email}
+        data = urllib.parse.urlencode(data)
+        data = data.encode('ascii')
         headers = {'Content-Type': 'application/json',
                    'User-Agent': 'Mozilla/5'}
 
