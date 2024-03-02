@@ -5,22 +5,33 @@ Finds the peak in an unsorted list of integers
 
 
 def find_peak(list_of_integers):
-    """Finds a peak in list_of_integers"""
+    """
+    Finds a peak in a list of unsorted integers.
 
-    if list_of_integers is None or list_of_integers == []:
+    Args:
+            list_of_integers: A list of unsorted integers.
+
+    Returns:
+            An integer representing a
+            peak in the list. If there are multiple peaks,
+            any one of them may be returned.
+    """
+
+    # Handle base cases
+
+    if len(list_of_integers) is None or list_of_integers == []:
         return None
-    lo = 0
-    hi = len(list_of_integers)
-    mid = ((hi - lo) // 2) + lo
-    mid = int(mid)
-    if hi == 1:
+    if len(list_of_integers) == 1:
         return list_of_integers[0]
-    if hi == 2:
+    elif len(list_of_integers) == 2:
         return max(list_of_integers)
-    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
-            list_of_integers[mid] >= list_of_integers[mid + 1]:
-        return list_of_integers[mid]
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
-        return find_peak(list_of_integers[mid:])
-    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
-        return find_peak(list_of_integers[:mid])
+
+    # Recursively search for the peak
+    # in the left and right halves of the list
+
+    mid_index = len(list_of_integers) // 2
+    left_peak = find_peak(list_of_integers[:mid_index])
+    right_peak = find_peak(list_of_integers[mid_index:])
+
+    # Compare the peak candidates and return the largest one
+    return max(left_peak, right_peak)
