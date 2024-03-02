@@ -10,18 +10,18 @@ import urllib.parse
 import urllib.request
 
 
-def post_email(email, url):
+def post_email(_email, _url):
     """
     Sends a POST request to the passed URL with the email as a parameter
-    :param email: The email address passed
-    :param url: The url to post the email to
+    :param _email: The email address passed
+    :param _url: The url to post the email to
     :return: The body of the response
     """
-    values = {'email': email}
+    values = {'email': _email}
     headers = {'User-Agent': 'Mozilla/5'}
     data = urllib.parse.urlencode(values)
-    data = data.encode('ascii')
-    req = urllib.request.Request(url, data, headers)
+    data = data.encode('utf-8')
+    req = urllib.request.Request(_url, data, headers)
 
     with urllib.request.urlopen(req) as response:
         return response.read()
