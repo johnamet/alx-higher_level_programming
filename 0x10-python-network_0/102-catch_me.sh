@@ -1,3 +1,3 @@
 #!/bin/bash
 # Makes a request to 0.0.0.0:5000/catch_me that gets the message "You got me!".
-curl -sL -X POST -H "Content-Type: application/json" -d '{"message": "I am coming for you!"}' http://0.0.0.0:5000/catch_me
+curl -LX PUT -H "Content-Type: text/plain" -d "This is the contents of my text file." http://0.0.0.0:5000/catch_me
