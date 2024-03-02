@@ -36,8 +36,8 @@ def send_post_request(url, email):
 
 
 if __name__ == "__main__":
-    url = input("Enter URL: ")
-    email = input("Enter email: ")
+    url = sys.argv[1]
+    email = sys.argv[2]
 
     response_body = send_post_request(url, email)
 
