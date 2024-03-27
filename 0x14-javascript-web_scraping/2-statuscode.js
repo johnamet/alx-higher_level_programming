@@ -8,6 +8,6 @@ const request = require('request');
 const url = process.argv[2];
 
 // send a get request
-request.get(url).on('response', function(response) {
-	console.log(`code: ${response.statusCode}`)
+request.get(url).on('response', function (response) {
+  console.log(`code: ${response.statusCode}`);
 });
