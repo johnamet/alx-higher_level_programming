@@ -21,7 +21,7 @@ request.get(url, function (error, response, body) {
   const results = movieJson.results;
 
   const filterd = results.map(movie => movie.characters.filter(url => url.endsWith("18")))
-  .filter(movie => movie.characters.length === 0)
+  .filter(movie => movie)
 
   console.log(filterd)
 });
