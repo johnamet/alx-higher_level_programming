@@ -11,7 +11,11 @@ const episode = process.argv[2];
 //The url
 const url = `https://swapi-api.alx-tools.com/api/films/${episode}`;
 
-request.get(url).on('response', function(response) {
-	const movie = response.json();
+request.get(url).on('response', async function(err, response, body) {
+	if (err) {
+		console.log(err)
+		return;
+	}
+	const movie = JSON.parse(body);
 	console.log(movie.title);
 });
