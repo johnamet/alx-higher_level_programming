@@ -13,6 +13,9 @@ const url = `https://swapi-api.alx-tools.com/api/films/${episode}`;
 
 // Send a GET request to the Star Wars API
 request.get(url, function (error, response, body) {
+  if (error) {
+    return;
+  }
   // Parse the response body as JSON
   const movie = JSON.parse(body);
   console.log(movie.title);
