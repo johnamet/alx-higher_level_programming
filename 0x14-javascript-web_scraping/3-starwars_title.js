@@ -3,7 +3,7 @@
  * Prints the title of Star Wras movie
  * where the episode number matches a given integer
  */
-const request = require('request');
+// const request = require('request');
 
 // Get the episode number
 const episode = process.argv[2];
