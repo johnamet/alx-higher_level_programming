@@ -1,19 +1,26 @@
 #!/usr/bin/node
 /**
- * Prints the title of Star Wras movie
+ * Prints the title of Star Wars movie
  * where the episode number matches a given integer
  */
-// const request = require('request');
+const request = require('request');
 
-// Get the episode number
+// Get the episode number from command-line arguments
 const episode = process.argv[2];
 
-//The url
+// The URL
 const url = `https://swapi-api.alx-tools.com/api/films/${episode}`;
 
-const request = new Request(url);
-
-const response = await fetch(request);
-const movie = await response.json();
-
-console.log(movie.title);
+// Send a GET request to the Star Wars API
+request.get(url, function(error, response, body) {
+  if (error) {
+    console.error('Error:', error);
+    return;
+  }
+  console.log(response);
+//   // Parse the response body as JSON
+//   const movie = JSON.parse(body);
+  
+//   // Print the title of the movie
+//   console.log(movie.title);
+});
