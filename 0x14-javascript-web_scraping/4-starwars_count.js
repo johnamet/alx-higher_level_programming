@@ -20,8 +20,8 @@ request.get(url, function (error, response, body) {
   const movieJson = JSON.parse(body);
   const results = movieJson.results;
 
-  const filterd = results.map(movie => movie.characters.filter(url => url.endsWith("18")))
-  .filter(movie => movie)
+  const filterd = results.map(movie => movie.characters.filter(url => url.endsWith("/18/")))
+  .filter(movie => movie.length > 0);
 
-  console.log(filterd)
+  console.log(filterd.length)
 });
