@@ -19,8 +19,8 @@ request.get(url, function(error, response, body) {
   }
   console.log(response);
 //   // Parse the response body as JSON
-//   const movie = JSON.parse(body);
-  
+     const movie = JSON.parse(body);
+  console.log(movie);
 //   // Print the title of the movie
 //   console.log(movie.title);
 });
