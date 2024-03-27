@@ -20,7 +20,7 @@ request.get(url, function(error, response, body) {
   console.log(response);
 //   // Parse the response body as JSON
      const movie = JSON.parse(body);
-  console.log(movie);
+  console.log(movie.title);
 //   // Print the title of the movie
 //   console.log(movie.title);
 });
